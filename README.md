@@ -35,9 +35,9 @@ It focuses on applying practical deep learning techniques including transfer lea
 ```
 ├── Final_Proj_Classify_Waste_Products_Using_TL_FT_v1.ipynb
 ├── README.md
+```
 
 
----
 
 ## ⚙️ Setup
 
