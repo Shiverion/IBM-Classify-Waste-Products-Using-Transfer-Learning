@@ -146,3 +146,33 @@ This model can be applied to:
 ## ⭐ Final Note
 
 This project highlights practical implementation of transfer learning as taught in the IBM Deep Learning course, bridging theory with real-world application in sustainability and automation.
+
+## System Design
+
+### Requirements
+
+- Classify waste images into organic and recyclable classes.
+- Compare a frozen VGG16 feature extractor with a fine-tuned VGG16 model and inspect test predictions.
+
+### Pipeline
+
+```text
+External two-class image folders → ImageDataGenerator resize/rescale/augment
+                                → ImageNet VGG16 feature extraction
+                                → fine-tuning → test predictions and plots
+```
+
+The 150×150 image workflow is contained in `Final_Proj_Classify_Waste_Products_Using_TL_FT_v1.ipynb`. The dataset itself is not included in the repository.
+
+### Trade-offs
+
+| Decision | Benefit | Cost |
+| --- | --- | --- |
+| Start from ImageNet VGG16 weights | Reuses visual features for a small coursework dataset | Requires compatible weights and external image folders |
+| Keep training in one notebook | Makes the learning sequence easy to follow | Runtime state is not packaged as an inference service |
+
+### What to Revisit
+
+- Document the expected dataset directory layout and source.
+- Save a final model and add a small inference example.
+- Record the TensorFlow version and training configuration.
